@@ -21,4 +21,6 @@ RUN uv sync --frozen
 
 COPY . .
 
-CMD ["bash", "start"]
+CMD ["sh", "-c", "uv run python3 -m http.server ${PORT:-10000} & bash start"]
+
+
