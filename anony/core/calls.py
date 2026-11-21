@@ -208,7 +208,7 @@ class TgCall(PyTgCalls):
     async def boot(self) -> None:
         PyTgCallsSession.notice_displayed = True
         for ub in userbot.clients:
-            client = PyTgCalls(ub 
+            client = PyTgCalls(ub, cache_duration=0)
             await client.start()
             self.clients.append(client)
             await self.decorators(client)
